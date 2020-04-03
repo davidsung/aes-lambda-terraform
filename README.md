@@ -1,4 +1,4 @@
-# Stream CloudWatch Log to Amazon Elasticsearch across multiple AWS Accounts
+# Stream CloudWatch Logs to Amazon Elasticsearch across multiple AWS Accounts
 
 ## Architecture Diagram
 
@@ -31,4 +31,14 @@ Trigger some API calls
 ```shell script
 for i in `seq 1 5`; do curl $(terraform output base_url); done
 ```
-Open a browser and visit the url `$(terraform output kibana_endpoint)`
+* Check CloudWatch Logs on the `Source` AWS Account
+* select `Log groups`
+* select `/aws/lambda/LogsToElasticsearch` Log Groups
+* click the latest log stream
+* If CWL > AES succeeded, you should see a log like this
+```
+INFO	Response: 
+{
+    "statusCode": 200
+}
+```
