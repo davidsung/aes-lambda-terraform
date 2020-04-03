@@ -4,7 +4,7 @@
 
 ## Prepare terraform.tfvars
 ```shell script
-copy example.tfvars terraform.tfvars
+cp example.tfvars terraform.tfvars
 ```
 Edit `terraform.tfvars` and supply the suitable values for
 * `aws_destination_profile` - AWS Profile Name where Amazon Elasticsearch should provision and
